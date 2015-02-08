@@ -26,13 +26,14 @@ def mkdir_p(path):
 def getDate(pullPath):
     try :
         ct = getmtime(pullPath)
+    except :
+        return '2015/02/08'
+    else :
         year = datetime.fromtimestamp(ct).strftime('%Y')
         month = datetime.fromtimestamp(ct).strftime('%m')
         day = datetime.fromtimestamp(ct).strftime('%d')
-
         return year + '/' + month + '/' + day
-    except :
-        return '2015/02/08'
+
 
 def get_exif(filename):
     try:
